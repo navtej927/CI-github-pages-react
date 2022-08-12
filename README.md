@@ -5,6 +5,8 @@ https://dev.to/dyarleniber/setting-up-a-ci-cd-workflow-on-github-actions-for-a-r
 
 
 
+To deploy to the github pages I Have used the action https://github.com/peaceiris/actions-gh-pages
+
 ==========================================
 
 
