@@ -28,18 +28,6 @@ jobs:
           name: react-github-actions-build
           path: dist
 
-    # - name: Deploy app to github pages
-    #   run: |
-    #     git config --global user.name $user_name
-    #     git config --global user.email $user_email
-    #     git remote set-url origin https://${github_token}@github.com/${repository}
-    #     npm run deploy
-    #   env:
-    #     user_name: 'github-actions[bot]'
-    #     user_email: 'github-actions[bot]@users.noreply.github.com'
-    #     github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-    #     repository: ${{ github.repository }}
-
   deploy:
 
     runs-on: ubuntu-latest
@@ -54,6 +42,9 @@ jobs:
         with:
           name: react-github-actions-build
           path: ./dist
+          
+      - name: check the files
+        run: ls
       
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
@@ -77,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     # We specify that deploys needs to
     # finish before we create a release
-    needs: build
+    needs: deploy
     steps:
       # Download previously shared build
       - name: Get artifact
