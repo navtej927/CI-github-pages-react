@@ -44,8 +44,7 @@ jobs:
           path: ./dist
 
       - name: check the files
-        run: cd dist
-        run: ls
+        run: cd dist && ls
       
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
