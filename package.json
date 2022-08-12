@@ -1,9 +1,9 @@
 {
   "name": "ci-github-pages-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
-  "homepage":"https://navtej927.github.io/CI-github-pages-react",
+  "homepage": "https://github.com/navtej927/CI-github-pages-react#readme",
   "scripts": {
     "build": "webpack --mode development",
     "build:dev": "webpack --mode development",
@@ -24,7 +24,6 @@
   "bugs": {
     "url": "https://github.com/navtej927/CI-github-pages-react/issues"
   },
-  "homepage": "https://github.com/navtej927/CI-github-pages-react#readme",
   "dependencies": {
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
