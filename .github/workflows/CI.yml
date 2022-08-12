@@ -43,7 +43,7 @@ jobs:
           name: react-github-actions-build
           path: ./dist
 
-      - name: check the files
+      - name: check the files to deploy
         run: cd dist && ls
       
       - name: Deploy to gh-pages
@@ -51,6 +51,8 @@ jobs:
         with:
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           publish_dir: ./dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
 
       # - name: Deploy app to github pages
       #   run: |
