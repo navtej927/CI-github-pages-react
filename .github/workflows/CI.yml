@@ -42,8 +42,9 @@ jobs:
         with:
           name: react-github-actions-build
           path: ./dist
-          
+
       - name: check the files
+        run: cd dist
         run: ls
       
       - name: Deploy to gh-pages
