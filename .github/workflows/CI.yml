@@ -97,4 +97,3 @@ jobs:
           artifacts: react-github-actions-release-build.zip
           body: https://navtej927.github.io/CI-github-pages-react/
           token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          tag: 1.0.1
