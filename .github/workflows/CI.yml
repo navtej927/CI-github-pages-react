@@ -97,3 +97,4 @@ jobs:
           artifacts: react-github-actions-release-build.zip
           body: https://react-github-actions.s3.amazonaws.com/index.html
           token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          tag: 1.0.1
