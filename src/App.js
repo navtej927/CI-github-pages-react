@@ -1,5 +1,11 @@
 import React from "react";
+import PackageJson from "../package.json";
 
 export const App = () => {
-  return <h1>Hello fron the App</h1>;
+  return (
+    <div>
+      <h1>version {PackageJson.version}</h1>
+      <div>Hello from the App</div>
+    </div>
+  );
 };
