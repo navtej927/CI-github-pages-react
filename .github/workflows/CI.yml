@@ -28,43 +28,50 @@ jobs:
           name: react-github-actions-build
           path: dist
 
-    - name: Deploy app to github pages
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
-        npm run deploy
-      env:
-        user_name: 'github-actions[bot]'
-        user_email: 'github-actions[bot]@users.noreply.github.com'
-        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-        repository: ${{ github.repository }}
+    # - name: Deploy app to github pages
+    #   run: |
+    #     git config --global user.name $user_name
+    #     git config --global user.email $user_email
+    #     git remote set-url origin https://${github_token}@github.com/${repository}
+    #     npm run deploy
+    #   env:
+    #     user_name: 'github-actions[bot]'
+    #     user_email: 'github-actions[bot]@users.noreply.github.com'
+    #     github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+    #     repository: ${{ github.repository }}
 
-  # deploy:
+  deploy:
 
-  #   runs-on: ubuntu-latest
-  #   # When application is successfully tested and build has been generated
-  #   # Then we can start with deployment
-  #   needs: build
+    runs-on: ubuntu-latest
+    # When application is successfully tested and build has been generated
+    # Then we can start with deployment
+    needs: build
 
-  #   steps:
-  #     # Download previously shared build
-  #     - name: Get artifact
-  #       uses: actions/download-artifact@v1
-  #       with:
-  #         name: react-github-actions-build
+    steps:
+      # Download previously shared build
+      - name: Get artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: react-github-actions-build
+          path: ./dist
+      
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          publish_dir: ./dist
 
-  #     # - name: Deploy app to github pages
-  #     #   run: |
-  #     #     git config --global user.name $user_name
-  #     #     git config --global user.email $user_email
-  #     #     git remote set-url origin https://${github_token}@github.com/${repository}
-  #     #     npm run deploy
-  #     #   env:
-  #     #     user_name: 'github-actions[bot]'
-  #     #     user_email: 'github-actions[bot]@users.noreply.github.com'
-  #     #     github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-  #     #     repository: ${{ github.repository }}
+      # - name: Deploy app to github pages
+      #   run: |
+      #     git config --global user.name $user_name
+      #     git config --global user.email $user_email
+      #     git remote set-url origin https://${github_token}@github.com/${repository}
+      #     npm run deploy
+      #   env:
+      #     user_name: 'github-actions[bot]'
+      #     user_email: 'github-actions[bot]@users.noreply.github.com'
+      #     github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+      #     repository: ${{ github.repository }}
 
   release:
     runs-on: ubuntu-latest
