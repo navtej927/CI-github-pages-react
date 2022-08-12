@@ -6,6 +6,7 @@ export const App = () => {
     <div>
       <h1>version {PackageJson.version}</h1>
       <div>Hello from the App</div>
+      <div>1</div>
     </div>
   );
 };
