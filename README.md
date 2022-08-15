@@ -3,6 +3,8 @@ best url's
 https://gist.github.com/ljmocic/3b171a3ee6e2a613eac7c465480a72e1
 https://dev.to/dyarleniber/setting-up-a-ci-cd-workflow-on-github-actions-for-a-react-app-with-github-pages-and-codecov-4hnp
 
+https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/triggers.html
+
 
 
 To deploy to the github pages I Have used the action https://github.com/peaceiris/actions-gh-pages
