@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/navtej927/CI-github-pages-react#readme",
+  "homepage": "https://navtej927.github.io/CI-github-pages-react/",
   "scripts": {
     "build": "webpack --mode development",
     "build:dev": "webpack --mode development",
