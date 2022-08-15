@@ -11,6 +11,12 @@ To deploy to the github pages I Have used the action https://github.com/peaceiri
 
 ==========================================
 
+In order to build the project
+run npm version patch
+git push patch version
+
+==========
+
 
 name: CI
 
