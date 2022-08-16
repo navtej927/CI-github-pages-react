@@ -5,6 +5,8 @@ https://dev.to/dyarleniber/setting-up-a-ci-cd-workflow-on-github-actions-for-a-r
 
 https://michaelcurrin.github.io/dev-cheatsheets/cheatsheets/ci-cd/github-actions/triggers.html
 
+https://trekinbami.medium.com/using-environment-variables-in-react-6b0a99d83cf5
+
 
 
 To deploy to the github pages I Have used the action https://github.com/peaceiris/actions-gh-pages
